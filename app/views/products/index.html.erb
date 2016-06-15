@@ -1,0 +1,26 @@
+<div class="container">
+	<table class="bordered">
+		<thead>
+			<tr>
+				<th data-field="name">Name</th>
+				<th data-field="name">Description</th>
+				<th data-field="name">Category</th>
+				<th data-field="email">Price</th>
+				<th data-field="blank"></th>
+			</tr>
+		<% @products.each do |u| %>
+		<tbody>
+		<tr>
+			<td><%= u.name %></td>
+			<td><%= u.description %></td>
+			<td><%= u.category.name %></td>
+			<td>$<%= u.price %></td>
+			<td><a href="/products/<%= u.id %>">Show | <a href="/products/<%= u.id %>/edit">Edit | <a href="products/<%= u.id %>" data-method='delete'>Destroy</a></td>
+		</tr>
+		</tbody>
+		<% end %>
+	</table>
+	
+	<a href="/new/" class="waves-effect waves-light btn">New Product</a>
+
+</div>
