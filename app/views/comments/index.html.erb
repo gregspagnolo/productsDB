@@ -1,0 +1,19 @@
+<div class="container">
+<h4>All Comments</h4>
+	<table class="bordered">
+		<thead>
+			<tr>
+				<th data-field="name">Comments</th>
+				<th data-field="name">Product Name</th>
+			</tr>
+		<% @comments.each do |c| %>
+		<tbody>
+		<tr>
+			<td><%= c.comment %></td>
+			<td><a href="/products/<%= c.product_id %>"</a><%= c.product.name %></td>
+		</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>
+

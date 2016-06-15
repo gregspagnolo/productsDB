@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/products/:id/edit' => 'products#edit'
   patch '/products/:id' => 'products#update'
   delete '/products/:id' => 'products#destroy'
+
+  get '/comments' => 'comments#index'
+  post '/comment/create' => 'comments#create'
 end
