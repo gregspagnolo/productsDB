@@ -16,7 +16,7 @@
   		</button>
 	</form>
   		
-  		<% @comment.each do |c| %>
-  		<%= c.comment %>
-  		<%= c.created_at %>
-  		<% end %>
+  	<% @comment.each do |c| %>
+  		<p><%= c.comment %></p>
+  		<p>Posted on: <%= c.created_at.strftime("%m-%d-%Y") %></p>
+  	<% end %>
