@@ -1,7 +1,7 @@
 <p>Name: <%= @product.name %></p>
 <p>Description: <%= @product.description %></p>
-<p>Category: <%= @product.category.name %></p>
-<p>Price: <%= @product.price %></p>
+<!-- <p>Category: <#%= @product.category.name %></p> -->
+<p>Price: <%= number_to_currency(@product.price) %></p>
 	<form action="/comment/create" method="post">
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 	      	<div class="row">

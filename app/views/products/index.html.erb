@@ -11,17 +11,17 @@
 			</tr>
 		<% @products.each do |u| %>
 		<tbody>
-		<tr>
-			<td><%= u.name %></td>
-			<td><%= u.description %></td>
-			<td><%= u.category.name %></td>
-			<td>$<%= u.price %></td>
-			<td><a href="/products/<%= u.id %>"><i class="material-icons">visibility</i>  <a href="/products/<%= u.id %>/edit"><i class="material-icons">mode_edit</i>  <a href="products/<%= u.id %>" data-method='delete'><i class="material-icons">delete</i></a></td>
-		</tr>
+			<tr>
+				<td><%= u.name %></td>
+				<td><%= u.description %></td>
+				<!-- <td><#%= u.category.name %></td> -->
+				<td><%= number_to_currency(u.price) %></td>
+				<td><a href="/products/<%= u.id %>"><i class="material-icons">visibility</i>  <a href="/products/<%= u.id %>/edit"><i class="material-icons">mode_edit</i>  <a href="products/<%= u.id %>" data-method='delete'><i class="material-icons">delete</i></a></td>
+			</tr>
 		</tbody>
 		<% end %>
 	</table>
-	
-	<a href="/new/" class="waves-effect waves-light btn">New Product</a>
+
+	<a href="products/new" class="waves-effect waves-light btn">New Product</a>
 
 </div>

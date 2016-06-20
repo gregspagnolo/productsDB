@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'products#index'
-  get '/new' => 'products#new'
+  get 'products/new' => 'products#new'
   post '/create' => 'products#create'
   get '/products/:id' => 'products#show'
   get '/products/:id/edit' => 'products#edit'
