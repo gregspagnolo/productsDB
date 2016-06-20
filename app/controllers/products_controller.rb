@@ -31,8 +31,9 @@ class ProductsController < ApplicationController
 
 
   def update
-    if Product.find(params[:id]).update(product_params)
-      redirect_to :root
+    p = Product.find(params[:id])
+    if p.update(product_params)
+      redirect_to "/"
     else
       redirect_to :back
     end
@@ -47,5 +48,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :price, :category_id, :comment_id)
     end
-    
+
 end
