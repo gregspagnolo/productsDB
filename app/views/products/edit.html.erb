@@ -18,13 +18,13 @@
       <div class="row">
         <div class="input-field col s12">
         	<select class="browser-default" name="product[category_id]">
-				<%# @categories.each do |c| %>
-					<%# if c.id == @product.category.id %>
-					<!-- <option selected><%#= @product.category.name %></option> -->
-					<%# else %>
-					<!-- <option value="<%#= c.id %>"><%#= c.name %></option> -->
-					<%# end %>
-				<%# end %>
+				<% @categories.each do |c| %>
+					<% if c.id == @product.category.id %>
+					 <option selected value="<%= c.id %>"><%= @product.category.name %></option>
+					<% else %>
+					<option value="<%= c.id %>"><%= c.name %></option>
+					<% end %>
+				<% end %>
 			</select>
         </div>
       </div>
@@ -35,6 +35,4 @@
         </div>
       </div>
       <input type='submit' id="Update" value='Update'>
-      	<!-- <button class="btn waves-effect waves-light" type="submit" id='Update' value='Update'>Update
-    		<i class="material-icons right">send</i></button> -->
 </form>

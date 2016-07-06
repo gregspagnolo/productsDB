@@ -12,9 +12,17 @@ RSpec.describe Product, :type => :model do
 		product.valid?
 		expect(product.errors[:price].any?).to eq(true)
 	end	
-	it "requires a price" do
+	it "requires a description" do
 		product = Product.new(description: "")
 		product.valid?
 		expect(product.errors[:description].any?).to eq(true)
 	end	
+
+	describe "relationships" do
+		it "belongs to a category" do
+			category = Category.create(name: "Category1")
+			product = category.products.create(name: "Product1", description: "Product1Description", price: 10.00)
+			expect(product.category).to eq(category)
+		end
+	end
 end
